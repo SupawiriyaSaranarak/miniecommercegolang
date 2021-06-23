@@ -1,0 +1,28 @@
+
+### Get Order
+GET  http://localhost:8081/api/order-buyer?status=ordered HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdsYW9nbGFvQGdtYWlsLmNvbSIsImV4cCI6MTYyNDM5OTkyMSwiaWQiOjEsInN0YXR1cyI6InVzZXIifQ.XBuoiAVWiuEq1WwCjRWijpUyXk_wh4A3QhNDNhsMXHQ
+
+### Get Order
+GET  http://localhost:8081/api/order-seller?status=ordered HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhQGdtYWlsLmNvbSIsImV4cCI6MTYyNDQwMTU5OCwiaWQiOjMsInN0YXR1cyI6InVzZXIifQ.ekCw3Wn5D8T_NNTilzD8dGxtffXzuoL77LAEr5-idwE
+
+###Create Order
+POST http://localhost:8081/api/order HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdsYW9nbGFvQGdtYWlsLmNvbSIsImV4cCI6MTYyNDM5MzM5OSwiaWQiOjEsInN0YXR1cyI6InVzZXIifQ.eE-B6do1tbBhL_bnLruOenczuH2-ddAfH22sFU9kGwc
+Content-Type: application/json
+
+{
+    "productId" : "6",
+    "amount" : 1,
+    "price" : 3900
+}
+
+###Edit Order status
+PUT http://localhost:8081/api/order/3/delivering HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdsYW9nbGFvQGdtYWlsLmNvbSIsImV4cCI6MTYyNDM5MzM5OSwiaWQiOjEsInN0YXR1cyI6InVzZXIifQ.eE-B6do1tbBhL_bnLruOenczuH2-ddAfH22sFU9kGwc
+
+
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdsYW9nbGFvQGdtYWlsLmNvbSIsImV4cCI6MTYyNDM5OTkyMSwiaWQiOjEsInN0YXR1cyI6InVzZXIifQ.XBuoiAVWiuEq1WwCjRWijpUyXk_wh4A3QhNDNhsMXHQ
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmdwaW5nQGdtYWlsLmNvbSIsImV4cCI6MTYyNDQwMTU1NSwiaWQiOjIsInN0YXR1cyI6InVzZXIifQ.n-MsYaGWvVWgR5z28BTfiJRU22CVcK5BjoWL3O0rGFI
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhQGdtYWlsLmNvbSIsImV4cCI6MTYyNDQwMTU5OCwiaWQiOjMsInN0YXR1cyI6InVzZXIifQ.ekCw3Wn5D8T_NNTilzD8dGxtffXzuoL77LAEr5-idwE
