@@ -80,8 +80,9 @@ func saveImage(image *multipart.FileHeader, product *model.Product, c *gin.Conte
 			log.Fatalf("Failed to intialize Cloudinary, %v", err)
 		}
 		var ctx = context.Background()
+		// fileDir := fmt.Sprintf("/Users/Glao/Desktop/CodeCamp/mini-e-commerce/mini/uploaded/images/%s", fileName)
 		resp, err := cld.Upload.Upload(ctx, filePath, uploader.UploadParams{})
-		// `/Users/Glao/Desktop/CodeCamp/mini-e-commerce/mini/uploaded/images/7.jpg`
+		//filePath
 		if err != nil {
 			log.Fatalf("Failed to upload file, %v\n", err)
 		}
@@ -118,9 +119,9 @@ func editProduct(c *gin.Context) {
 	if result.RowsAffected == 0 {
 		c.JSON(http.StatusUnauthorized, gin.H{"message": "Cannot edit other's product."})
 	} else {
-		
+
 		product.Stock, _ = strconv.ParseInt(c.PostForm("stock"), 10, 64)
-		
+
 		// db.GetDB().Model(&product).Update("stock", product.Stock)
 		db.GetDB().Save(&product)
 
